@@ -7,25 +7,28 @@
 //
 
 import UIKit
+
 fileprivate let kSingCellId = "kSingCellId"
-//代理
+
+//  代理
 protocol YLSinglerViewDelegate : class {
     func singlerView(_ singlerowView : YLSinglerowView, selectedIndex index: Int)
 }
+
 class YLSinglerowView: UIView {
-    //枚举
+    //  枚举
     enum ScrollStyle {//滚动方式
         case right //向右滚动
         case left  //向左滚动
         case up    //向上滚动
         case down  //向下滚动
     }
-//MARK: --属性
+//  MARK: --属性
     fileprivate var style : ScrollStyle?
     fileprivate var singlerTimer : Timer?
     fileprivate var time : Double?
     fileprivate var index : CGFloat?
-//MARK: -- 公开的属性===============================================
+//  MARK: -- 公开的属性===============================================
     //背景颜色
     var backColor : UIColor? {
         didSet {
